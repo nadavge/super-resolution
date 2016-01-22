@@ -16,13 +16,13 @@ function [idx,Dist] = findNearestNeighbors( imPatches, dbPatches )
 % from the input image
 % Dist? M ª 3 matrix where the ith row contains the euclidean distances
 %   between the best 3 patches that has been found for the ith patch
-    PATCH_SIZE = 5;
+    PATCH_AREA = 25;
     K = 3; % Number of nearest neighbors to take
     
     M = size(imPatches, 1);
     N = size(dbPatches, 1);
-    imPatches = reshape( imPatches, M, PATCH_SIZE^2 );
-    dbPatches = reshape( dbPatches, N, PATCH_SIZE^2 );
+    imPatches = reshape( imPatches, M, PATCH_AREA );
+    dbPatches = reshape( dbPatches, N, PATCH_AREA );
     
-    [idx, Dist] = knnsearch( imPatches, dbPatches, 'k', K);
+    [idx, Dist] = knnsearch( dbPatches, imPatches, 'k', K);
 end

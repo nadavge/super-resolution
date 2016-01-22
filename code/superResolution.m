@@ -14,12 +14,12 @@ pyr = createPyramid( im );
 [m,n]=size(im);
 
 %Sample patches for the imput image:
-[pxIm, pyIm, imPatches] = samplePatches( im ,0 );
+tic;[pxIm, pyIm, imPatches] = samplePatches( im ,0 );toc;
 
 
 reshapedImPatches=reshape(imPatches,[size(imPatches,1)*size(imPatches,2),5,5]);
-[dbPx, dbPy,centersPyrLevel, dbPatches] = createDB( pyr );
-[idx,Dist] = findNearestNeighbors( reshapedImPatches,dbPatches  );
+tic;[dbPx, dbPy,centersPyrLevel, dbPatches] = createDB( pyr );toc;
+tic;[idx,Dist] = findNearestNeighbors( reshapedImPatches,dbPatches  );toc;
 
 %Save the positions of the center of the neighbors (child patches)
 xCenters=dbPx(idx);
@@ -41,7 +41,7 @@ stdDb=reshape(stdDb,[(m-4),(n-4),3]);
 Dist=reshape(Dist,[(m-4),(n-4),3]);
 
 
-weights = weightsSetting( imPatches,Dist,pyr,stdDb );
+tic;weights = weightsSetting( imPatches,Dist,pyr,stdDb );toc;
 
 
 %Building each empty level in the pyramid
