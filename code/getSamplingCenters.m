@@ -32,7 +32,7 @@ function [sampleCentersX,sampleCentersY,renderedPyramid] = ...
     
     offset = 0;
     for i=1:7,
-       sampleCentersX(levels==i) = sampleCentersX(levels==i) + offset;
+       sampleCentersX(levels==i) = xPos(levels==i) + offset;
        offset = offset + size( pyr{i}, 2 );
     end
 end
