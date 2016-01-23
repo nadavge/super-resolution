@@ -56,8 +56,8 @@ function [assignmentPositionsX,assignmentPositionsY,...
         levels, pyr, levelsUp );
     
     % Transform to be of size (m-4)x(n-4)x3x5x5
-    upPixelX = repmat(upPixelX, [1, 1, 3, 5, 5]);
-    upPixelY = repmat(upPixelY, [1, 1, 3, 5, 5]);
+    upPixelX = repmat(upPixelX, [1, 1, 1, 5, 5]);
+    upPixelY = repmat(upPixelY, [1, 1, 1, 5, 5]);
     
     % Add the patchs shifts
     upPixelX = upPixelX + patchX;
