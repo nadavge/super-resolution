@@ -1,0 +1,49 @@
+nadavg
+
+butterfly.png
+colorSuperResolution.m
+createDB.m
+createPyramid.m
+findNearestNeighbors.m
+fish.png
+getImage.asv
+getImage.m
+getSamplingCenters.m
+getSamplingInformation.m
+myResults.m
+README
+renderPyramidEx5.m
+samplePatches.m
+superResolution.m
+thresholdCalc.m
+transformPointsLevelsUp.m
+translateImageHalfPixel.m
+weightsSetting.m
+zebra.png
+
+What details did you perserve?
+
+butterfly:
+	The procedure keeps well the wings and the big textures.
+
+zebra:
+	The procedure keeps well the stripes and textures all over the zebra,
+	even its face.
+
+fish:
+	The procedure keeps well the stripes, and also the fins, and basic structures
+	such as eyes.
+
+What details did you lose?
+
+butterfly:
+	The procedure doesn't keep the leaves good, and loses the little details
+	on the butterflies wings.
+
+zebra:
+	The procedure doesn't keep the grass good, and even blurs it a bit, because
+	it is very small.
+
+fish:
+	The procedure keeps most things quite good, but loses some of the tiny textures
+	of the skin of the fish
