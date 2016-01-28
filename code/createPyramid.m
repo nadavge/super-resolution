@@ -13,9 +13,9 @@ function pyr = createPyramid( im )
     cbrt = @(x) x.^(1/3);
     
     pyr = cell(7,1);
-    pyr{1} = imresize(im, 0.5);
-    pyr{2} = imresize(im, cbrt(0.25));
-    pyr{3} = imresize(im, cbrt(0.5));
+    pyr{1} = imresize(im, 0.5, 'cubic');
+    pyr{2} = imresize(im, cbrt(0.25), 'cubic');
+    pyr{3} = imresize(im, cbrt(0.5), 'cubic');
     pyr{4} = im;
     pyr{5} = zeros( round(cbrt(2)*size(im)) );
     pyr{6} = zeros( round(cbrt(4)*size(im)) );
